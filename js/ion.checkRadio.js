@@ -1,4 +1,4 @@
-﻿// Ion.CheckRadio
+// Ion.CheckRadio
 // version 1.1.0 Build: 23
 // © 2014 Denis Ineshin | IonDen.com
 //
@@ -136,21 +136,19 @@
                         return false;
                     });
 
-                    $input.on("stateChanged", function () {
+                    $input.on("change", function () {
                         checkListen();
                     });
                 };
 
                 var checkOn = function () {
-                    $input.prop("checked", "checked");
+                    $input.prop("checked", true);
                     $input.trigger("change");
-                    $("input[name='"+name+"']").trigger("stateChanged");
                 };
 
                 var checkOff = function () {
                     $input.removeProp("checked");
                     $input.trigger("change");
-                    $("input[name='"+name+"']").trigger("stateChanged");
                 };
 
                 var checkListen = function () {
