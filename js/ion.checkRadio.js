@@ -136,7 +136,7 @@
                         return false;
                     });
 
-                    $input.on("change", function () {
+                    $input.on("stateChanged", function () {
                         checkListen();
                     });
                 };
@@ -144,11 +144,13 @@
                 var checkOn = function () {
                     $input.prop("checked", true);
                     $input.trigger("change");
+                    $("input[name='"+name+"']").trigger("stateChanged");
                 };
 
                 var checkOff = function () {
                     $input.removeProp("checked");
                     $input.trigger("change");
+                    $("input[name='"+name+"']").trigger("stateChanged");
                 };
 
                 var checkListen = function () {
